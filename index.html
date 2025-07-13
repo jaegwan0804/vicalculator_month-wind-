@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>풍력발전 VIC 계산기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>풍력발전 VIC 계산기</h1>
+
+  <!-- ① 설비 종류 선택 -->
+  <section id="step1">
+    <p class="subtitle">설비 종류를 선택하세요</p>
+    <div class="type-buttons">
+      <button class="big-btn" data-type="onshore">육상&nbsp;풍력</button>
+      <button class="big-btn" data-type="offshore">해상&nbsp;풍력</button>
+    </div>
+  </section>
+
+  <!-- ② 입력 폼 -->
+  <section id="step2" class="hidden">
+    <label>설비 용량&nbsp;(MW)
+      <input id="capacity" type="number" step="0.001" placeholder="예) 3" required>
+    </label>
+
+    <!-- 해상 풍력 전용 : 연안 거리 -->
+    <label id="distanceWrap" class="hidden">연안으로부터 거리&nbsp;(km)
+      <input id="distance" type="number" step="0.1" placeholder="예) 8">
+    </label>
+
+    <label>정산기간 총 발전량&nbsp;(MWh)
+      <input id="energy" type="number" step="0.1" placeholder="예) 600" required>
+    </label>
+
+    <button id="calcBtn" class="calc-btn">계산</button>
+  </section>
+
+  <!-- ③ 결과 -->
+  <section id="result" class="hidden"></section>
+
+  <script src="script.js"></script>
+</body>
+</html>
